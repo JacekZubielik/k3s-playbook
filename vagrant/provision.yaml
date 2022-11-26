@@ -3,10 +3,10 @@
   become_method: sudo
   tasks:
 
-# - name: Update OS
-#   package:
-#     name: '*'
-#     state: latest
+- name: Update OS
+  package:
+    name: '*'
+    state: latest
 
 - name: Install Basic packages
   package:
