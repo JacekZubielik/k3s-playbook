@@ -1,6 +1,4 @@
 ---
-# collections:
-#   - name: community.general
 collections:
 - name: ansible.utils
 - name: community.general
