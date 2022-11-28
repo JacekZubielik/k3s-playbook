@@ -1,0 +1,29 @@
+---
+- hosts: k3s_cluster
+  gather_facts: yes
+  become: yes
+  roles:
+  - role: prereq
+  - role: download
+
+- hosts: master
+  become: yes
+  roles:
+  - role: k3s/master
+
+- hosts: infra
+  become: yes
+  roles:
+  - role: k3s/node
+  - role: install/infra
+
+- hosts: app
+  become: yes
+  roles:
+  - role: k3s/node
+  - role: install/app
+
+- hosts: master
+  become: yes
+  roles:
+  - role: k3s/post
