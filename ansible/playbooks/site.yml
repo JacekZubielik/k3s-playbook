@@ -26,4 +26,4 @@
 - hosts: master
   become: yes
   roles:
-    - role: k3s/post
+  - role: k3s/post
